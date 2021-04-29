@@ -39,23 +39,30 @@ export default function PokemonList() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text>Lista de pokemons</Text>
+        <Text style={styles.headerText}>Lista de pokemons</Text>
       </View>
-      <View style={styles.header}>
-        <Text>Selecione qualquer nome para ver detalhes do pokemon</Text>
+      <View style={styles.content}>
+        <Text style={styles.contentText}>
+          Selecione qualquer nome para ver detalhes do pokemon
+        </Text>
       </View>
-      <TouchableOpacity onPress={() => navigateToFavorites()}>
-        <Text>Ver meus favoritos</Text>
+      <TouchableOpacity
+        style={styles.favoriteButton}
+        onPress={() => navigateToFavorites()}
+      >
+        <Text style={styles.favoriteText}>Ver meus favoritos</Text>
+        <FontAwesome name="heart" size={36} color="#307CBF" />
       </TouchableOpacity>
       <FlatList
         data={pokemons}
         style={styles.pokemonsList}
         keyExtractor={(pokemon) => String(pokemon.name)}
+        showsVerticalScrollIndicator={false}
         onEndReached={loadPokemons}
         onEndReachedThreshold={0.2}
         renderItem={({ item: pokemon }) => (
           <TouchableOpacity
-            onPress={() => navigateToPokemonDetail(pokemon.url)}
+            onPress={() => navigateToPokemonDetail(pokemon.name)}
           >
             <View style={styles.listItem}>
               <Text style={styles.title}>{pokemon.name}</Text>
@@ -69,7 +76,7 @@ export default function PokemonList() {
                   );
                 }}
               >
-                <FontAwesome name="heart-o" size={36} color="red" />
+                <FontAwesome name="heart-o" size={36} color="#307CBF" />
               </TouchableOpacity>
             </View>
           </TouchableOpacity>

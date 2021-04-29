@@ -22,7 +22,7 @@ export default StyleSheet.create({
     borderColor: "#307CBF",
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
     color: "#307CBF",

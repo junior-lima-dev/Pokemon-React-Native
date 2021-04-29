@@ -2,28 +2,25 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: "#F2B807",
+    flex: 1,
     padding: 10,
+    backgroundColor: "#F2B807",
   },
   header: {
     marginTop: 32,
     marginHorizontal: 10,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: "#307CBF",
+    padding: 8,
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
   },
-  headerText: {
-    fontSize: 32,
+  headerTitle: {
     fontWeight: "bold",
+    fontSize: 25,
     color: "#307CBF",
-  },
-  content: {
-    marginTop: 15,
-    marginHorizontal: 10,
-  },
-  contentText: {
-    fontSize: 24,
-    color: "#307CBF",
-  },
-  pokemonsList: {
-    marginTop: 32,
   },
   listItem: {
     padding: 24,
@@ -42,20 +39,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
     color: "#307CBF",
   },
-  favoriteButton: {
-    marginTop: 20,
-    marginHorizontal: 10,
-    borderWidth: 2,
-    borderRadius: 15,
-    borderColor: "#307CBF",
-    padding: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  favoriteText: {
-    color: "#307CBF",
-    fontSize: 20,
-    fontWeight: "bold",
+  scroll: {
+    marginTop: 16,
   },
 });
